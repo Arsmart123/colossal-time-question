@@ -1,0 +1,13 @@
+Add the two new file: vit_1d.py and __init__.py. vit_1d.py to the same direction of run.py for detailed configuration, __init__.py defined a very simple MSEloss, you can put it into '/colossalai/nn/loss/' to replace the original __init__.py
+run the "run.py" file using below command:
+make sure the vit_1d.py 's TENSOR_PARALLEL_SIZE = 1 
+torchrun  --nproc_per_node=1   --nnodes=1  --node_rank=0   --master_addr='172.18.126.98'     --master_port='51062'  run.py --config='vit_1d.py'
+
+and get a time about 11s
+
+run the 'run.py' file using the below command:
+make sure the vit_1d.py 's TENSOR_PARALLEL_SIZE = 2 
+torchrun  --nproc_per_node=2   --nnodes=1  --node_rank=0   --master_addr='172.18.126.98'     --master_port='51062'  run.py --config='vit_1d.py'
+
+
+If meet problem, use hostname -I to find correct hostname to replace the master_addr value above. 
