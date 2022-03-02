@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
-# 这个train_1文件和train文件其他地方都一样，只是在train中使用的是单层linear_col，而train_1中使用的是linear_col_tensorized
 import os
 import colossalai
 import torchvision
